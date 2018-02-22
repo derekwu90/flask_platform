@@ -1,0 +1,2 @@
+graft src/flask_platform/templates
+recursive-include src/flask_platform/templates *

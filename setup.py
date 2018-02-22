@@ -12,12 +12,9 @@ import sys
 from setuptools import setup
 
 # Add here console scripts and other entry points in ini-style format
-entry_points = """
-[console_scripts]
-# script_name = flask_platform.module:function
-# For example:
-# fibonacci = flask_platform.skeleton:run
-"""
+entry_points = {
+          'console_scripts':['flask_platform=flask_platform.running:flaskrun']}
+
 
 
 def setup_package():
@@ -25,6 +22,8 @@ def setup_package():
     sphinx = ['sphinx'] if needs_sphinx else []
     setup(setup_requires=['pyscaffold>=3.0a0,<3.1a0'] + sphinx,
           entry_points=entry_points,
+          include_package_data = True,
+          zip_safe=False,
           use_pyscaffold=True)
 
 
